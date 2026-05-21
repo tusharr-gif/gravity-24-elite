@@ -1,3 +1,5 @@
+import logo from "@/assets/logo.jpg";
+
 export function Footer() {
   return (
     <footer className="relative border-t border-white/10">
@@ -5,9 +7,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-neon text-black font-black text-lg">G</span>
-              <span className="font-display text-2xl">GRAVITY <span className="text-neon">24</span></span>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Gravity 24 Sport Gym" className="h-14 w-auto object-contain drop-shadow-[0_0_22px_rgba(56,189,248,0.45)]" />
+              <span className="font-display text-2xl">GRAVITY <span className="text-orange">24</span></span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm">
               Premium sports turf & fitness experience in Pune. Train hard. Play harder. Open 24/7.
