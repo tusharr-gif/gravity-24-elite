@@ -99,6 +99,8 @@
   .text-neon { color: var(--neon); }
   .bg-neon { background-color: var(--neon); }
   .border-neon { border-color: var(--neon); }
+  .text-orange { color: var(--accent-orange); }
+  .bg-orange { background-color: var(--accent-orange); }
   .glow-neon { box-shadow: 0 0 40px -8px color-mix(in oklab, var(--neon) 60%, transparent), 0 0 80px -20px color-mix(in oklab, var(--neon) 40%, transparent); }
   .text-stroke {
     -webkit-text-stroke: 1.5px var(--neon);
