@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.jpg";
 
 const links = [
   { href: "#about", label: "About" },
@@ -33,13 +34,14 @@ export function Navbar() {
             scrolled ? "glass" : "bg-transparent"
           }`}
         >
-          <a href="#top" className="flex items-center gap-2">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-neon text-black font-black text-lg">
-              G
-              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-neon glow-neon" />
-            </span>
-            <span className="font-display text-xl tracking-wide">
-              GRAVITY <span className="text-neon">24</span>
+          <a href="#top" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Gravity 24 Sport Gym logo"
+              className="h-11 w-auto object-contain drop-shadow-[0_0_18px_rgba(56,189,248,0.45)]"
+            />
+            <span className="font-display text-xl tracking-wide hidden sm:inline">
+              GRAVITY <span className="text-orange">24</span>
             </span>
           </a>
 

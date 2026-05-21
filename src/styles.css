@@ -51,20 +51,22 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.16 0.006 270);
   --popover-foreground: oklch(0.98 0 0);
-  --neon: oklch(0.92 0.21 105); /* neon yellow */
-  --primary: oklch(0.92 0.21 105);
+  --neon: oklch(0.82 0.16 220); /* logo cyan/blue */
+  --neon-2: oklch(0.95 0.03 230); /* silver highlight */
+  --accent-orange: oklch(0.78 0.18 55); /* logo orange */
+  --primary: oklch(0.82 0.16 220);
   --primary-foreground: oklch(0.13 0.005 270);
   --secondary: oklch(0.22 0.01 270);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.22 0.01 270);
   --muted-foreground: oklch(0.7 0.01 270);
-  --accent: oklch(0.92 0.21 105);
+  --accent: oklch(0.82 0.16 220);
   --accent-foreground: oklch(0.13 0.005 270);
   --destructive: oklch(0.62 0.23 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.92 0.21 105 / 60%);
+  --ring: oklch(0.82 0.16 220 / 60%);
 }
 
 .dark {
@@ -97,6 +99,8 @@
   .text-neon { color: var(--neon); }
   .bg-neon { background-color: var(--neon); }
   .border-neon { border-color: var(--neon); }
+  .text-orange { color: var(--accent-orange); }
+  .bg-orange { background-color: var(--accent-orange); }
   .glow-neon { box-shadow: 0 0 40px -8px color-mix(in oklab, var(--neon) 60%, transparent), 0 0 80px -20px color-mix(in oklab, var(--neon) 40%, transparent); }
   .text-stroke {
     -webkit-text-stroke: 1.5px var(--neon);
