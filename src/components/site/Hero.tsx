@@ -15,13 +15,14 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Athlete sprinting on illuminated indoor turf at Gravity 24"
+          alt="Floodlit cricket turf at night with stadium spotlights at Gravity 24"
           className="h-full w-full object-cover scale-105"
           width={1920}
-          height={1280}
+          height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_70%_30%,rgba(234,255,0,0.18),transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_20%,rgba(234,255,0,0.22),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_100%,rgba(0,0,0,0.7),transparent_70%)]" />
       </div>
 
       {/* Floating particles */}
