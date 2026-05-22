@@ -43,19 +43,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 sm:px-6 pt-32 pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
-          className="flex items-center gap-3"
-        >
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-neon">
-            <span className="absolute inset-0 rounded-full bg-neon pulse-ring" />
-          </span>
-          <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Pune · Narhe · 24/7 Open
-          </span>
-        </motion.div>
+
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

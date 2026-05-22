@@ -34,15 +34,12 @@ export function Navbar() {
             scrolled ? "glass" : "bg-transparent"
           }`}
         >
-          <a href="#top" className="flex items-center gap-3">
+          <a href="#top" className="flex items-center relative h-12 w-48 shrink-0">
             <img
               src={logo}
               alt="Gravity 24 Sport Gym logo"
-              className="h-11 w-auto object-contain drop-shadow-[0_0_18px_rgba(56,189,248,0.45)]"
+              className="absolute top-1/2 -translate-y-1/2 -left-4 h-48 w-auto max-w-none object-contain drop-shadow-[0_0_30px_rgba(56,189,248,0.6)]"
             />
-            <span className="font-display text-xl tracking-wide hidden sm:inline">
-              GRAVITY <span className="text-orange">24</span>
-            </span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-7 text-sm text-muted-foreground">
