@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Star, ShieldCheck } from "lucide-react";
-import t1 from "@/assets/trainer1.jpg";
+import certificateImg from "@/assets/certificate.jpg";
 
 export function Trainers() {
   return (
@@ -25,10 +25,10 @@ export function Trainers() {
           {/* Certificate / Profile Image */}
           <div className="lg:w-2/5 aspect-[4/3] lg:aspect-auto overflow-hidden relative">
             <img
-              src={t1}
-              alt="Chetan Balasaheb Dhumane"
+              src={certificateImg}
+              alt="Chetan Balasaheb Dhumane Certificate"
               loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="h-full w-full object-contain bg-black/40 transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent lg:hidden" />
           </div>
