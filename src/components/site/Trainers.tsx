@@ -23,18 +23,19 @@ export function Trainers() {
           className="group relative overflow-hidden rounded-3xl border border-white/10 bg-surface flex flex-col lg:flex-row"
         >
           {/* Certificate / Profile Image */}
-          <div className="lg:w-2/5 aspect-[4/3] lg:aspect-auto overflow-hidden relative">
-            <img
-              src={certificateImg}
-              alt="Chetan Balasaheb Dhumane Certificate"
-              loading="lazy"
-              className="h-full w-full object-contain bg-black/40 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent lg:hidden" />
+          <div className="lg:w-5/12 bg-black/40 p-6 sm:p-8 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-white/10 relative min-h-[300px] lg:min-h-0">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <img
+                src={certificateImg}
+                alt="Chetan Balasaheb Dhumane Certificate"
+                loading="lazy"
+                className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain rounded-lg shadow-2xl border border-white/20 transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
           </div>
 
           {/* Bio Section */}
-          <div className="p-8 sm:p-12 lg:w-3/5 flex flex-col justify-center bg-gradient-to-br from-surface to-black/50">
+          <div className="p-8 sm:p-12 lg:w-7/12 flex flex-col justify-center bg-gradient-to-br from-surface to-black/50">
             <div className="flex items-center gap-3 mb-4">
               <Award className="text-neon h-6 w-6" />
               <span className="text-sm uppercase tracking-widest text-neon font-semibold">Certified Expert</span>
