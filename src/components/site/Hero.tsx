@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import heroImg from "@/assets/hero.jpg";
 
 const stats = [
@@ -9,16 +10,32 @@ const stats = [
 ];
 
 export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Transform values for highly cinematic scroll parallax
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.25]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0px", "200px"]);
+  const textXLeft = useTransform(scrollYProgress, [0, 1], ["0vw", "-8vw"]);
+  const textXRight = useTransform(scrollYProgress, [0, 1], ["0vw", "8vw"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
-    <section id="top" className="relative min-h-[100svh] overflow-hidden">
+    <section id="top" ref={containerRef} className="relative min-h-[100svh] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img
+        <motion.img
           src={heroImg}
           alt="Floodlit cricket turf at night with stadium spotlights at Gravity 24"
           className="h-full w-full object-cover scale-105"
           width={1920}
           height={1080}
+          style={{ y: bgY, scale: bgScale }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_20%,rgba(56,189,248,0.22),transparent_65%)]" />
@@ -43,19 +60,29 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 sm:px-6 pt-32 pb-16">
-
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
-          className="mt-6 font-display text-[14vw] sm:text-[10vw] lg:text-[8.5rem] leading-[0.85]"
-        >
-          TRAIN HARD. <br />
-          <span className="text-stroke">PLAY</span> <span className="text-neon">HARDER.</span>
-        </motion.h1>
+        <h1 className="mt-6 font-display text-[12vw] sm:text-[10vw] lg:text-[8rem] leading-[0.85] tracking-tighter uppercase select-none overflow-hidden pb-4">
+          <motion.span
+            style={{ x: textXLeft, y: textY, opacity: textOpacity, display: "block" }}
+            initial={{ opacity: 0, x: "-8vw" }}
+            animate={{ opacity: 1, x: "0vw" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-black text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.65)]"
+          >
+            TRAIN HARD.
+          </motion.span>
+          <motion.span
+            style={{ x: textXRight, y: textY, opacity: textOpacity, display: "block" }}
+            initial={{ opacity: 0, x: "8vw" }}
+            animate={{ opacity: 1, x: "0vw" }}
+            transition={{ duration: 1.2, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            className="font-black text-stroke drop-shadow-[0_8px_24px_rgba(0,0,0,0.65)] mt-1"
+          >
+            PLAY <span className="text-neon glow-text-neon font-black">HARDER.</span>
+          </motion.span>
+        </h1>
 
         <motion.p
+          style={{ y: textY, opacity: textOpacity }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
@@ -66,6 +93,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div
+          style={{ y: textY, opacity: textOpacity }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
