@@ -1,10 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "dist/server/server.js", "use": "@vercel/edge" }
-  ],
-  "routes": [
-    { "src": "/assets/(.*)", "dest": "/dist/client/assets/$1" },
-    { "src": "/(.*)", "dest": "/dist/server/server.js" }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
