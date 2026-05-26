@@ -1,23 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/client/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "dist/server/server.js",
-      "use": "@vercel/edge"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/dist/client/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/server/server.js"
-    }
-  ]
+  "buildCommand": "vite build",
+  "outputDirectory": ".vercel/output",
+  "framework": null
 }
