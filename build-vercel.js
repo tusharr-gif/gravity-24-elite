@@ -50,7 +50,7 @@ if (fs.existsSync(serverDist)) {
   console.log('➡️ Copying server entry and assets...');
   fs.copyFileSync(
     path.join(serverDist, 'server.js'),
-    path.join(funcDir, 'index.js')
+    path.join(funcDir, 'server-entry.js')
   );
   
   const serverAssets = path.join(serverDist, 'assets');
@@ -62,18 +62,84 @@ if (fs.existsSync(serverDist)) {
   process.exit(1);
 }
 
-// 5. Generate .vc-config.json for the Edge function
-console.log('📝 Writing .vc-config.json for Edge Runtime...');
+// 5. Generate Node.js Fetch Wrapper index.js
+console.log('📝 Writing Node.js wrapper index.js...');
+const nodeWrapperCode = `import { Readable } from 'stream';
+import server from './server-entry.js';
+
+export default async function handler(req, res) {
+  try {
+    const protocol = req.headers['x-forwarded-proto'] || 'http';
+    const host = req.headers['x-forwarded-host'] || req.headers.host || 'localhost';
+    const url = new URL(req.url, \`\${protocol}://\${host}\`);
+
+    const body = ['GET', 'HEAD'].includes(req.method) ? undefined : await readRequestBody(req);
+
+    const headers = new Headers();
+    for (const [key, value] of Object.entries(req.headers)) {
+      if (value !== undefined) {
+        if (Array.isArray(value)) {
+          value.forEach(v => headers.append(key, v));
+        } else {
+          headers.set(key, value);
+        }
+      }
+    }
+
+    const fetchReq = new Request(url.toString(), {
+      method: req.method,
+      headers,
+      body,
+    });
+
+    const response = await server.fetch(fetchReq, {}, {});
+
+    res.statusCode = response.status;
+    response.headers.forEach((value, key) => {
+      res.setHeader(key, value);
+    });
+
+    if (response.body) {
+      const reader = response.body.getReader();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        res.write(value);
+      }
+    }
+    res.end();
+  } catch (error) {
+    console.error('Error in Vercel Node.js Serverless Handler:', error);
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+  }
+}
+
+function readRequestBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on('data', chunk => chunks.push(chunk));
+    req.on('end', () => resolve(Buffer.concat(chunks)));
+    req.on('error', err => reject(err));
+  });
+}
+`;
+
+fs.writeFileSync(path.join(funcDir, 'index.js'), nodeWrapperCode);
+
+// 6. Generate .vc-config.json for Node.js Serverless Function
+console.log('📝 Writing .vc-config.json for Node.js Runtime...');
 const vcConfig = {
-  runtime: 'edge',
-  entrypoint: 'index.js'
+  runtime: 'nodejs20.x',
+  entrypoint: 'index.js',
+  launcherType: 'Nodejs'
 };
 fs.writeFileSync(
   path.join(funcDir, '.vc-config.json'),
   JSON.stringify(vcConfig, null, 2)
 );
 
-// 6. Generate config.json for Vercel routing
+// 7. Generate config.json for Vercel routing
 console.log('📝 Writing global config.json...');
 const globalConfig = {
   version: 3,
