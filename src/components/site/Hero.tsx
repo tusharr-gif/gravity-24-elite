@@ -169,7 +169,7 @@ export function Hero() {
         <div className="marquee-track flex w-max gap-12 whitespace-nowrap font-display text-2xl sm:text-3xl">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex gap-12">
-              {["CRICKET TURF", "STRENGTH", "BOXING", "CROSSFIT", "FUNCTIONAL", "PERSONAL TRAINING", "OPEN 24/7"].map(
+              {["MINI CRICKET TURF", "STRENGTH", "BOXING", "CROSSFIT", "FUNCTIONAL", "PERSONAL TRAINING", "OPEN 24/7"].map(
                 (t) => (
                   <span key={t} className="flex items-center gap-12 text-muted-foreground">
                     {t}
