@@ -15,30 +15,15 @@ export function Contact() {
           <p className="mt-5 text-muted-foreground max-w-md">
             Walk in any time. We're open 24/7 for members and turf bookings.
           </p>
-
           <div className="mt-8 space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 glass rounded-2xl p-4">
-                <MapPin className="text-neon shrink-0 mt-1" size={18} />
-                <div className="text-sm">
-                  <div className="font-semibold">Gravity 24 Sports Gym</div>
-                  <div className="text-muted-foreground">
-                    Top floor, Bhadavale Heights, Shree Control Chowk Rd,<br />
-                    Above Balaji Traders, Mokarwadi, Narhe,<br />
-                    Pune, Maharashtra 411041
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 glass rounded-2xl p-4">
-                <MapPin className="text-neon shrink-0 mt-1" size={18} />
-                <div className="text-sm">
-                  <div className="font-semibold">GRAVITY 24 Sport Gym</div>
-                  <div className="text-muted-foreground">
-                    Bhadawale complex, S. No 37/2, Above Balaji Traders,<br />
-                    Top floor, Shree Control Chowk, Narhe,<br />
-                    Pune, Maharashtra 411041
-                  </div>
+            <div className="flex items-start gap-3 glass rounded-2xl p-4">
+              <MapPin className="text-neon shrink-0 mt-1" size={18} />
+              <div className="text-sm">
+                <div className="font-semibold">GRAVITY 24 Sport Gym</div>
+                <div className="text-muted-foreground">
+                  Bhadawale complex, S. No 37/2, Above Balaji Traders,<br />
+                  Top floor, Shree Control Chowk, Narhe,<br />
+                  Pune, Maharashtra 411041
                 </div>
               </div>
             </div>
