@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Dumbbell, Activity, Zap, Target, Users, Trophy } from "lucide-react";
 
 const items = [
-  { icon: Trophy, t: "Mini Cricket Turf", d: "Olympic-grade turf, floodlit, 24/7 bookable slots." },
+  { icon: Trophy, t: "Mini Sport Turf", d: "Olympic-grade turf, floodlit, 24/7 bookable slots." },
   { icon: Activity, t: "Functional Training", d: "Sleds, ropes, plyo and mobility zones." },
   { icon: Dumbbell, t: "Strength Gym", d: "Olympic platforms, racks and premium plates." },
   { icon: Zap, t: "Boxing Zone", d: "Heavy bags, speed bags and pad work ring." },
