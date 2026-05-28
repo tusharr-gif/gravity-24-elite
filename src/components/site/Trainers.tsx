@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Star, ShieldCheck } from "lucide-react";
 import certificateImg from "@/assets/certificate.jpg";
+import certificate2Img from "@/assets/certificate2.jpg";
 
 // Cinematic word-by-word animation helper
 function AnimatedHeading({
@@ -154,17 +155,23 @@ export function Trainers() {
 
           {/* Certificate / Profile Image */}
           <motion.div
-            className="lg:w-5/12 bg-black/40 p-6 sm:p-8 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-white/10 relative min-h-[300px] lg:min-h-0"
+            className="lg:w-5/12 bg-black/40 p-6 sm:p-8 flex flex-col justify-center items-center border-b lg:border-b-0 lg:border-r border-white/10 relative min-h-[300px] lg:min-h-0"
             initial={{ opacity: 0, x: -60 }}
             animate={sectionInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full flex flex-col sm:flex-row lg:flex-col gap-5 items-center justify-center">
               <img
                 src={certificateImg}
-                alt="Chetan Balasaheb Dhumane Certificate"
+                alt="Chetan Balasaheb Dhumane Resuscitation Certificate"
                 loading="lazy"
-                className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain rounded-lg shadow-2xl border border-white/20 transition-transform duration-500 group-hover:scale-[1.02]"
+                className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] h-auto object-contain rounded-lg shadow-2xl border border-white/20 transition-transform duration-500 hover:scale-[1.03]"
+              />
+              <img
+                src={certificate2Img}
+                alt="Chetan Balasaheb Dhumane Certified Fitness Trainer Certificate"
+                loading="lazy"
+                className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] h-auto object-contain rounded-lg shadow-2xl border border-white/20 transition-transform duration-500 hover:scale-[1.03]"
               />
             </div>
           </motion.div>
@@ -223,19 +230,25 @@ export function Trainers() {
             </motion.p>
 
             {/* Stats grid */}
-            <div className="grid sm:grid-cols-2 gap-6 mt-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-auto">
               {[
+                {
+                  icon: <Award className="text-neon h-6 w-6" />,
+                  title: "Certified Trainer",
+                  desc: "KII Fitness Management Co. Pvt. Ltd. Certified.",
+                  delay: 1.25,
+                },
                 {
                   icon: <ShieldCheck className="text-neon h-6 w-6" />,
                   title: "Certified Lifesaver",
-                  desc: "Astitva Lifesaving Training & H.R.S. India Pvt. Ltd. Resuscitation Certified.",
-                  delay: 1.25,
+                  desc: "Astitva Lifesaving Resuscitation Certified.",
+                  delay: 1.35,
                 },
                 {
                   icon: <Star className="text-neon h-6 w-6" />,
                   title: "10+ Years Experience",
-                  desc: "A decade of transforming lives through disciplined training programs.",
-                  delay: 1.35,
+                  desc: "A decade of transforming lives through disciplined training.",
+                  delay: 1.45,
                 },
               ].map((item, i) => (
                 <motion.div
