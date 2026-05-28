@@ -54,6 +54,7 @@ const plans = [
       "Full gym access",
       "CrossFit + Strength + Cardio",
       "Unlimited group classes",
+      "Diet & nutrition planning",
     ],
     popular: false,
   },
