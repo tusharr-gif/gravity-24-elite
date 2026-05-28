@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import gym from "@/assets/gym.jpg";
-import turf from "@/assets/turf.jpg";
-import boxing from "@/assets/boxing.jpg";
-import functional from "@/assets/functional.jpg";
-import strength from "@/assets/strength.jpg";
-import cricket from "@/assets/cricket.jpg";
+import gallery1 from "@/assets/gallery1.jpg";
+import gallery3 from "@/assets/gallery3.jpg";
+import gallery4 from "@/assets/gallery4.jpg";
+import gallery5 from "@/assets/gallery5.jpg";
+import gallery6 from "@/assets/gallery6.jpg";
+import gallery7 from "@/assets/gallery7.jpg";
 
 const imgs = [
-  { src: gym, alt: "Premium gym interior", span: "row-span-2" },
-  { src: cricket, alt: "Cricket batting action", span: "" },
-  { src: boxing, alt: "Boxer training on heavy bag", span: "row-span-2" },
-  { src: turf, alt: "Floodlit turf at night", span: "" },
-  { src: functional, alt: "Functional training", span: "" },
-  { src: strength, alt: "Strength training deadlift", span: "row-span-2" },
+  { src: gallery1, alt: "Interactive Boxing & Turf Zone", span: "row-span-2" },
+  { src: gallery3, alt: "Premium Strength & Conditioning", span: "" },
+  { src: gallery5, alt: "Dumbbell Station & Motivation Wall", span: "" },
+  { src: gallery7, alt: "Elite Cable Pulley Stations", span: "row-span-2" },
+  { src: gallery4, alt: "Dynamic Multi-Sport Turf", span: "row-span-2" },
+  { src: gallery6, alt: "Monkey Bars & Agility Track", span: "" },
 ];
 
 export function Gallery() {

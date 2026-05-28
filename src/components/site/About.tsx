@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import gymImg from "@/assets/gym.jpg";
-import cricketImg from "@/assets/cricket.jpg";
-import strengthImg from "@/assets/strength.jpg";
 
 export function About() {
   return (
@@ -40,13 +38,13 @@ export function About() {
           </div>
         </div>
 
-        <div className="lg:col-span-7 grid grid-cols-6 grid-rows-6 gap-3 sm:gap-4 h-[520px] sm:h-[640px]">
+        <div className="lg:col-span-7 flex flex-col gap-3 sm:gap-4 h-[520px] sm:h-[640px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="col-span-4 row-span-4 overflow-hidden rounded-2xl relative group"
+            className="flex-1 overflow-hidden rounded-2xl relative group"
           >
             <img src={gymImg} alt="Premium gym interior" loading="lazy" className="h-full w-full object-cover hover-zoom" />
             <div className="absolute bottom-4 left-4 glass rounded-lg px-3 py-2 text-xs">
@@ -57,26 +55,8 @@ export function About() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="col-span-2 row-span-3 overflow-hidden rounded-2xl"
-          >
-            <img src={strengthImg} alt="Strength training" loading="lazy" className="h-full w-full object-cover hover-zoom" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="col-span-2 row-span-3 overflow-hidden rounded-2xl"
-          >
-            <img src={cricketImg} alt="Cricket turf action" loading="lazy" className="h-full w-full object-cover hover-zoom" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="col-span-4 row-span-2 rounded-2xl bg-neon text-black p-6 flex items-center justify-between glow-neon"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="h-28 sm:h-36 rounded-2xl bg-neon text-black p-6 flex items-center justify-between glow-neon"
           >
             <div>
               <div className="font-display text-4xl sm:text-5xl">10+ Years</div>

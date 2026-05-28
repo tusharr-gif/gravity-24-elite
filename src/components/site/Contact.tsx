@@ -52,12 +52,12 @@ export function Contact() {
                 <Send size={16} /> WhatsApp Us
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/gravityy_24"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
-                <Instagram size={16} /> @gravity24
+                <Instagram size={16} /> @gravityy_24
               </a>
             </div>
           </div>
@@ -68,15 +68,24 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl overflow-hidden border border-white/10 relative min-h-[420px]"
+          className="rounded-3xl overflow-hidden border border-white/10 relative min-h-[420px] group/map"
         >
           <iframe
             title="Gravity 24 Sports Gym location"
-            src="https://www.google.com/maps?q=Mokarwadi+Narhe+Pune+411041&output=embed"
+            src="https://www.google.com/maps?q=Gravity+24+sport+Gym+Narhe+Pune&output=embed"
             loading="lazy"
             className="absolute inset-0 h-full w-full"
             style={{ filter: "invert(0.9) hue-rotate(180deg) saturate(0.7) contrast(0.95)" }}
           />
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Gravity+24+sport+Gym+Narhe+Pune"
+            target="_blank"
+            rel="noreferrer"
+            className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-xl bg-black/80 hover:bg-black border border-white/10 px-4 py-2.5 text-xs font-semibold text-white transition hover:border-neon"
+          >
+            <MapPin size={14} className="text-neon" />
+            Open in Google Maps
+          </a>
         </motion.div>
       </div>
 

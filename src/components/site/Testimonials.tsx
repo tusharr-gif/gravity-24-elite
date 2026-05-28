@@ -16,7 +16,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-12">
         <span className="text-xs uppercase tracking-[0.3em] text-neon">/ Word On The Floor</span>
         <h2 className="mt-3 font-display text-5xl sm:text-6xl lg:text-7xl max-w-3xl">
-          LOVED BY <span className="text-neon">2,400+</span> ATHLETES.
+          LOVED BY <span className="text-neon">ATHLETES.</span>
         </h2>
       </div>
 

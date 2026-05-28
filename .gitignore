@@ -34,3 +34,4 @@ dist-ssr
 # Vercel Build Output API
 .vercel/
 
+.vercel

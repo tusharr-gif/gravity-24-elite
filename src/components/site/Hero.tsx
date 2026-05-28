@@ -1,16 +1,25 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 
-const stats = [
-  { v: "2,400+", l: "Active Members" },
-  { v: "18K+", l: "Matches Played" },
-  { v: "24/7", l: "Always Open" },
-  { v: "20+", l: "Certified Coaches" },
+const quotes = [
+  { text: "THE ONLY BAD WORKOUT IS THE ONE THAT DIDN'T HAPPEN.", author: "CHAMPIONS TRAIN HERE" },
+  { text: "DON'T WISH FOR IT. WORK FOR IT.", author: "NO EXCUSES" },
+  { text: "DISCIPLINE IS THE BRIDGE BETWEEN GOALS AND ACCOMPLISHMENT.", author: "STRENGTH & HONOR" },
+  { text: "YOUR ONLY LIMIT IS YOU.", author: "GRAVITY 24" },
+  { text: "PAIN IS TEMPORARY. PRIDE IS FOREVER.", author: "RISE & CONQUER" }
 ];
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [quoteIdx, setQuoteIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setQuoteIdx((prev) => (prev + 1) % quotes.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -114,21 +123,44 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Stats */}
+        {/* Animated Motivational Quotes */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.7 }}
-          className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-2xl glass"
+          className="mt-14 relative overflow-hidden rounded-2xl glass border border-white/5 p-6 sm:p-8 min-h-[140px] flex flex-col justify-center"
         >
-          {stats.map((s) => (
-            <div key={s.l} className="p-5 sm:p-6 bg-surface/40">
-              <div className="font-display text-3xl sm:text-4xl text-neon">{s.v}</div>
-              <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                {s.l}
+          {/* Animated Background Pulse */}
+          <div className="absolute inset-0 bg-gradient-to-r from-neon/5 via-transparent to-transparent pointer-events-none" />
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={quoteIdx}
+              initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 flex flex-col gap-2"
+            >
+              <div className="font-display text-lg sm:text-2xl lg:text-3xl font-black italic tracking-wide text-white leading-relaxed uppercase">
+                "{quotes[quoteIdx].text}"
               </div>
-            </div>
-          ))}
+              <div className="text-xs font-semibold tracking-[0.2em] text-neon/80 uppercase">
+                // {quotes[quoteIdx].author}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Glowing Progress bar */}
+          <div className="absolute bottom-0 left-0 h-[2px] bg-white/10 w-full overflow-hidden">
+            <motion.div
+              key={quoteIdx}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 5, ease: "linear" }}
+              className="h-full bg-neon glow-neon"
+            />
+          </div>
         </motion.div>
       </div>
 

@@ -10,5 +10,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
-  ]
+  ],
+  ssr: {
+    noExternal: true,
+  },
 });

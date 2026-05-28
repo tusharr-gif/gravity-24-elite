@@ -50,7 +50,7 @@ if (fs.existsSync(serverDist)) {
   console.log('➡️ Copying server entry and assets...');
   fs.copyFileSync(
     path.join(serverDist, 'server.js'),
-    path.join(funcDir, 'server-entry.js')
+    path.join(funcDir, 'server.js')
   );
   
   const serverAssets = path.join(serverDist, 'assets');
@@ -65,7 +65,7 @@ if (fs.existsSync(serverDist)) {
 // 5. Generate Node.js Fetch Wrapper index.js
 console.log('📝 Writing Node.js wrapper index.js...');
 const nodeWrapperCode = `import { Readable } from 'stream';
-import server from './server-entry.js';
+import server from './server.js';
 
 export default async function handler(req, res) {
   try {
@@ -131,13 +131,14 @@ fs.writeFileSync(path.join(funcDir, 'index.js'), nodeWrapperCode);
 console.log('📝 Writing .vc-config.json for Node.js Runtime...');
 const vcConfig = {
   runtime: 'nodejs20.x',
-  entrypoint: 'index.js',
+  handler: 'index.js',
   launcherType: 'Nodejs'
 };
 fs.writeFileSync(
   path.join(funcDir, '.vc-config.json'),
   JSON.stringify(vcConfig, null, 2)
 );
+
 
 // 7. Generate config.json for Vercel routing
 console.log('📝 Writing global config.json...');

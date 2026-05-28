@@ -4,33 +4,47 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Monthly",
-    price: "₹1,999",
+    price: "₹2,499",
     sub: "/ month",
     desc: "Try Gravity 24 with full club access.",
-    features: ["Full gym access", "Cardio + Strength zone", "Locker access", "1 group session / week"],
+    features: ["Full gym access", "Cardio + Strength zone", "Locker access", "General trainer support"],
     popular: false,
   },
   {
     name: "Quarterly",
-    price: "₹4,999",
+    price: "₹4,499",
     sub: "/ 3 months",
     desc: "Most chosen by serious athletes.",
     features: [
       "Everything in Monthly",
       "Unlimited group classes",
       "1 PT session / month",
-      "Turf booking discount 15%",
+      "Turf booking discount 10%",
       "Free body composition scan",
     ],
     popular: true,
   },
   {
-    name: "Yearly",
-    price: "₹14,999",
-    sub: "/ year",
-    desc: "Best value. Built for champions.",
+    name: "Half-Yearly",
+    price: "₹5,999",
+    sub: "/ 6 months",
+    desc: "Great commitment for serious results.",
     features: [
       "Everything in Quarterly",
+      "2 PT sessions / month",
+      "Turf booking discount 20%",
+      "Diet & nutrition planning",
+      "Priority locker access",
+    ],
+    popular: false,
+  },
+  {
+    name: "Yearly",
+    price: "₹6,999",
+    sub: "/ year",
+    desc: "Ultimate value. Built for champions.",
+    features: [
+      "Everything in Half-Yearly",
       "4 PT sessions / month",
       "Turf booking discount 30%",
       "Free Gravity 24 merch kit",
@@ -54,7 +68,7 @@ export function Membership() {
           </p>
         </div>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {plans.map((p, i) => (
             <motion.div
               key={p.name}
@@ -64,7 +78,7 @@ export function Membership() {
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className={`relative rounded-3xl p-8 border transition-all ${
                 p.popular
-                  ? "bg-neon text-black border-neon glow-neon scale-[1.02]"
+                   ? "bg-neon text-black border-neon glow-neon scale-[1.02] md:scale-105 z-10"
                   : "bg-surface border-white/10 hover:border-neon/40"
               }`}
             >
@@ -76,7 +90,7 @@ export function Membership() {
               <div className="font-display text-2xl">{p.name}</div>
               <div className={`mt-1 text-sm ${p.popular ? "text-black/70" : "text-muted-foreground"}`}>{p.desc}</div>
               <div className="mt-6 flex items-end gap-1">
-                <span className="font-display text-6xl">{p.price}</span>
+                <span className="font-display text-5xl">{p.price}</span>
                 <span className={`mb-2 text-sm ${p.popular ? "text-black/70" : "text-muted-foreground"}`}>{p.sub}</span>
               </div>
 
