@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Dumbbell, Activity, Zap, Heart, Target, Users, Trophy } from "lucide-react";
+import { Dumbbell, Activity, Zap, Target, Users, Trophy } from "lucide-react";
 
 const items = [
   { icon: Trophy, t: "Cricket Turf", d: "Olympic-grade turf, floodlit, 24/7 bookable slots." },
@@ -7,7 +7,6 @@ const items = [
   { icon: Dumbbell, t: "Strength Gym", d: "Olympic platforms, racks and premium plates." },
   { icon: Zap, t: "Boxing Zone", d: "Heavy bags, speed bags and pad work ring." },
   { icon: Target, t: "CrossFit Area", d: "Rigs, kettlebells, wall balls and assault bikes." },
-  { icon: Heart, t: "Cardio Deck", d: "Treadmills, rowers, bikes — silent and synced." },
   { icon: Users, t: "Personal Training", d: "1-on-1 coaching tailored to your goals." },
 ];
 
@@ -23,7 +22,7 @@ export function Facilities() {
             </h2>
           </div>
           <p className="max-w-sm text-muted-foreground">
-            Seven world-class zones engineered for serious athletes and weekend warriors alike.
+            Six world-class zones engineered for serious athletes and weekend warriors alike.
           </p>
         </div>
 
