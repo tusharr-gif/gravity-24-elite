@@ -7,7 +7,12 @@ const plans = [
     price: "₹2,499",
     sub: "/ month",
     desc: "Try Gravity 24 with full club access.",
-    features: ["Full gym access", "Cardio + Strength zone", "Locker access", "General trainer support"],
+    features: [
+      "EVERYTHING IN MONTH",
+      "FULL GYM ACCESS",
+      "CROSSFIT + STRENGTH + CARDIO",
+      "UNLIMITED GROUP CLASSES",
+    ],
     popular: false,
   },
   {
