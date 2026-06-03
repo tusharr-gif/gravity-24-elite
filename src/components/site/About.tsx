@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import gymImg from "@/assets/about-hero.jpg";
+import gymImg from "@/assets/about-hero-night.jpg";
 
 export function About() {
   return (
