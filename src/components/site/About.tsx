@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import gymImg from "@/assets/gym.jpg";
+import strengthImg from "@/assets/strength.jpg";
 
 export function About() {
   return (
@@ -46,7 +46,7 @@ export function About() {
             transition={{ duration: 0.7 }}
             className="flex-1 overflow-hidden rounded-2xl relative group"
           >
-            <img src={gymImg} alt="Premium gym interior" loading="lazy" className="h-full w-full object-cover hover-zoom" />
+            <img src={strengthImg} alt="Premium gym interior" loading="lazy" className="h-full w-full object-cover hover-zoom" />
             <div className="absolute bottom-4 left-4 glass rounded-lg px-3 py-2 text-xs">
               Strength Floor
             </div>
