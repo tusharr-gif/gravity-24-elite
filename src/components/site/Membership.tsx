@@ -22,7 +22,7 @@ const plans = [
     sub: "/ 3 months",
     desc: "Most chosen by serious athletes.",
     features: [
-      "Everything in Month",
+      "Everything in Quarterly",
       "Full gym access",
       "CrossFit + Strength",
       "Unlimited group classes",
