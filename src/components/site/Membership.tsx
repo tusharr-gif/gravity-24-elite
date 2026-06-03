@@ -46,7 +46,7 @@ const plans = [
   },
   {
     name: "Yearly",
-    price: "₹6,999",
+    price: "₹7,499",
     sub: "/ year",
     desc: "Ultimate value. Built for champions.",
     features: [
