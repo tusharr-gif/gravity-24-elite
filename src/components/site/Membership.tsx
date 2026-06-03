@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: "Quarterly",
-    price: "₹4,999",
+    price: "₹4,499",
     sub: "/ 3 months",
     desc: "Most chosen by serious athletes.",
     features: [
