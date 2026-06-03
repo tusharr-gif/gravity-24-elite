@@ -10,7 +10,7 @@ const plans = [
     features: [
       "Everything in Month",
       "Full gym access",
-      "CrossFit + Strength + Cardio",
+      "CrossFit + Strength",
       "Unlimited group classes",
       "Full body composition",
     ],
@@ -24,7 +24,7 @@ const plans = [
     features: [
       "Everything in Month",
       "Full gym access",
-      "CrossFit + Strength + Cardio",
+      "CrossFit + Strength",
       "Unlimited group classes",
       "Diet & nutrition planning",
     ],
@@ -38,7 +38,7 @@ const plans = [
     features: [
       "Everything in Half Year",
       "Full gym access",
-      "CrossFit + Strength + Cardio",
+      "CrossFit + Strength",
       "Unlimited group classes",
       "Diet & nutrition planning",
     ],
@@ -52,7 +52,7 @@ const plans = [
     features: [
       "Everything in Yearly",
       "Full gym access",
-      "CrossFit + Strength + Cardio",
+      "CrossFit + Strength",
       "Unlimited group classes",
       "Diet & nutrition planning",
     ],
