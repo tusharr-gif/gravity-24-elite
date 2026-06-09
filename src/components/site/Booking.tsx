@@ -89,7 +89,7 @@ export function Booking() {
     const priceText = `₹${totalPrice.toLocaleString("en-IN")}`;
     const message = `Hello Gravity 24, I would like to book a Turf Slot!\n\n*Name:* ${form.name}\n*Date & Day:* ${formattedDate}\n*Time Slot:* ${formatSlotTo12Hour(slot)}\n*Duration:* ${duration} ${duration === 1 ? 'Hour' : 'Hours'}\n*Price:* ${priceText}\n*Contact No:* ${form.phone}`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/917020704956?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/918482996616?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
     setDone(true);
   };

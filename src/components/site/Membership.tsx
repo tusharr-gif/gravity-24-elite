@@ -110,7 +110,7 @@ export function Membership() {
               </ul>
 
               <a
-                href="https://wa.me/917020704956"
+                href="https://wa.me/918482996616"
                 target="_blank"
                 rel="noreferrer"
                 className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition-transform hover:scale-[1.02] ${

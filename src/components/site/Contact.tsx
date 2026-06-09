@@ -1,7 +1,7 @@
 import { Instagram, MapPin, Phone, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
-const phones = ["+91 84829 96616", "+91 72186 06616", "+91 70207 04956"];
+const phones = ["+91 84829 96616", "+91 72186 06616"];
 
 export function Contact() {
   return (
@@ -43,7 +43,7 @@ export function Contact() {
 
             <div className="flex flex-wrap gap-3 pt-2">
               <a
-                href="https://wa.me/917020704956"
+                href="https://wa.me/918482996616"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-neon px-5 py-3 font-semibold text-black glow-neon hover:scale-[1.02] transition"
@@ -90,7 +90,7 @@ export function Contact() {
 
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/917020704956"
+        href="https://wa.me/918482996616"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-neon text-black flex items-center justify-center glow-neon hover:scale-110 transition"
