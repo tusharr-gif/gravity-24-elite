@@ -73,7 +73,7 @@ export function Gallery() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-neon">/ Gallery</span>
             <h2 className="mt-3 font-sans font-medium tracking-wide text-5xl sm:text-6xl lg:text-7xl uppercase text-white">
-              INSIDE <span className="text-neon">GRAVITY.</span>
+              INSIDE <span className="text-neon">GRAVITY 24.</span>
             </h2>
           </div>
           <div className="flex items-center gap-6">
