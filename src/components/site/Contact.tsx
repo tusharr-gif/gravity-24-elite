@@ -9,8 +9,8 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-10">
         <div>
           <span className="text-xs uppercase tracking-[0.3em] text-neon">/ Visit Us</span>
-          <h2 className="mt-3 font-display text-5xl sm:text-6xl lg:text-7xl">
-            COME FEEL <br /> THE <span className="text-neon">GRAVITY.</span>
+          <h2 className="mt-3 font-sans font-medium tracking-wide text-4xl sm:text-5xl lg:text-6xl uppercase text-white leading-[1.1]">
+            COME FEEL <br /> THE <span className="text-neon">GRAVITY 24 SPORT GYM.</span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-md">
             Walk in any time. We're open 24/7 for members and turf bookings.
