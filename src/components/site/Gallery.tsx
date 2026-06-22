@@ -11,7 +11,7 @@ import gallery6 from "@/assets/gallery6.jpg";
 import gallery7 from "@/assets/gallery7.jpg";
 
 const imgs = [
-  { src: gallery1, alt: "Interactive Boxing & Turf Zone" },
+  { src: gallery1, alt: "Self-Defence Activity Zone" },
   { src: gallery2, alt: "Premium Turf Ground & Night Spotlights" },
   { src: gallery3, alt: "Strength & Conditioning Arena" },
   { src: gallery7, alt: "Elite Cable Pulley Stations" },
