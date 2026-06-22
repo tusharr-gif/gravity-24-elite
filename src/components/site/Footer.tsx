@@ -29,6 +29,8 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>Shree Control Chowk, Narhe, Pune</li>
               <li>+91 84829 96616</li>
+              <li>+91 72186 06616</li>
+              <li>+91 70207 04956</li>
               <li>Open 24/7</li>
             </ul>
           </div>

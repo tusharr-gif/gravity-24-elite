@@ -1,7 +1,7 @@
 import { Instagram, MapPin, Phone, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
-const phones = ["+91 84829 96616", "+91 72186 06616"];
+const phones = ["+91 84829 96616", "+91 72186 06616", "+91 70207 04956"];
 
 export function Contact() {
   return (
