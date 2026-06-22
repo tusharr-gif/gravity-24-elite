@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 
 const quotes = [
+  { text: "NOT JUST A GYM. IT'S A PLAYGROUND.", author: "GRAVITY 24" },
   { text: "THE ONLY BAD WORKOUT IS THE ONE THAT DIDN'T HAPPEN.", author: "CHAMPIONS TRAIN HERE" },
   { text: "DON'T WISH FOR IT. WORK FOR IT.", author: "NO EXCUSES" },
   { text: "DISCIPLINE IS THE BRIDGE BETWEEN GOALS AND ACCOMPLISHMENT.", author: "STRENGTH & HONOR" },
