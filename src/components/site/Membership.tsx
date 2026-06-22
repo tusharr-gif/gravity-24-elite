@@ -3,12 +3,12 @@ import { Check } from "lucide-react";
 
 export function Membership() {
   const plan = {
-    name: "Yearly Membership",
+    name: "Membership",
     price: "₹599*",
     sub: "/ month",
     desc: "Ultimate value. Built for champions.",
     features: [
-      "Everything in Yearly",
+      "Everything in Membership",
       "Full gym access",
       "CrossFit + Strength",
       "Unlimited group classes",
