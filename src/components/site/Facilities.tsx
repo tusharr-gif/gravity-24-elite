@@ -5,7 +5,7 @@ const items = [
   { icon: Trophy, t: "Mini Sport Turf", d: "Olympic-grade turf, floodlit, 24/7 bookable slots." },
   { icon: Activity, t: "Functional Training", d: "Sleds, ropes, plyo and mobility zones." },
   { icon: Dumbbell, t: "Strength Training", d: "Olympic platforms, racks and premium plates." },
-  { icon: Zap, t: "Boxing Zone", d: "Heavy bags, speed bags and pad work ring." },
+  { icon: Zap, t: "Self-Defence Activity Zone", d: "Heavy boxing bags." },
   { icon: Target, t: "CrossFit Area", d: "Rigs, kettlebells, wall balls and assault bikes." },
   { icon: Users, t: "Personal Training", d: "1-on-1 coaching tailored to your goals." },
 ];
