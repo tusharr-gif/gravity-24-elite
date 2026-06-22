@@ -1,53 +1,11 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-const plans = [
-  {
-    name: "Monthly",
-    price: "₹2,499",
+export function Membership() {
+  const plan = {
+    name: "Yearly Membership",
+    price: "₹599*",
     sub: "/ month",
-    desc: "Try Gravity 24 with full club access.",
-    features: [
-      "Everything in Month",
-      "Full gym access",
-      "CrossFit + Strength",
-      "Unlimited group classes",
-      "Full body composition",
-    ],
-    popular: false,
-  },
-  {
-    name: "Quarterly",
-    price: "₹4,499",
-    sub: "/ 3 months",
-    desc: "Most chosen by serious athletes.",
-    features: [
-      "Everything in Quarterly",
-      "Full gym access",
-      "CrossFit + Strength",
-      "Unlimited group classes",
-      "Diet & nutrition planning",
-    ],
-    popular: true,
-  },
-  {
-    name: "Half-Yearly",
-    price: "₹5,999",
-    sub: "/ 6 months",
-    desc: "Great commitment for serious results.",
-    features: [
-      "Everything in Half Year",
-      "Full gym access",
-      "CrossFit + Strength",
-      "Unlimited group classes",
-      "Diet & nutrition planning",
-    ],
-    popular: false,
-  },
-  {
-    name: "Yearly",
-    price: "₹7,499",
-    sub: "/ year",
     desc: "Ultimate value. Built for champions.",
     features: [
       "Everything in Yearly",
@@ -56,11 +14,9 @@ const plans = [
       "Unlimited group classes",
       "Diet & nutrition planning",
     ],
-    popular: false,
-  },
-];
+    disclaimer: "*Conditions Apply",
+  };
 
-export function Membership() {
   return (
     <section id="membership" className="relative py-28 sm:py-36 bg-surface/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -70,58 +26,55 @@ export function Membership() {
             CHOOSE YOUR <span className="text-neon">EDGE.</span>
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Transparent plans. No hidden fees. Cancel anytime. Real results.
+            Premium fitness access made affordable. Real results.
           </p>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {plans.map((p, i) => (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`relative rounded-3xl p-8 border transition-all ${
-                p.popular
-                   ? "bg-neon text-black border-neon glow-neon scale-[1.02] md:scale-105 z-10"
-                  : "bg-surface border-white/10 hover:border-neon/40"
-              }`}
-            >
-              {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-black text-neon text-xs px-3 py-1 font-semibold tracking-widest uppercase border border-neon">
-                  Most Popular
-                </span>
-              )}
-              <div className="font-display text-2xl">{p.name}</div>
-              <div className={`mt-1 text-sm ${p.popular ? "text-black/70" : "text-muted-foreground"}`}>{p.desc}</div>
-              <div className="mt-6 flex items-end gap-1">
-                <span className="font-display text-5xl">{p.price}</span>
-                <span className={`mb-2 text-sm ${p.popular ? "text-black/70" : "text-muted-foreground"}`}>{p.sub}</span>
+        <div className="mt-14 max-w-md mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-3xl p-8 border border-neon/30 bg-surface/80 backdrop-blur-sm hover:border-neon transition-all duration-300 shadow-[0_0_50px_-12px_rgba(56,189,248,0.2)]"
+          >
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-neon text-black text-xs px-4 py-1 font-semibold tracking-widest uppercase border border-black shadow-lg">
+              LIMITED TIME OFFER
+            </span>
+            <div className="font-display text-3xl text-center text-white mt-2">{plan.name}</div>
+            <div className="mt-2 text-sm text-center text-muted-foreground">{plan.desc}</div>
+            
+            <div className="mt-6 flex flex-col items-center justify-center bg-black/40 rounded-2xl py-6 border border-white/5">
+              <div className="flex items-end gap-1">
+                <span className="font-display text-6xl text-neon font-black">{plan.price}</span>
+                <span className="mb-2 text-sm text-muted-foreground">{plan.sub}</span>
               </div>
+              <div className="mt-2 text-[10px] text-muted-foreground tracking-wider uppercase">
+                {plan.disclaimer}
+              </div>
+            </div>
 
-              <ul className="mt-7 space-y-3 text-sm">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2">
-                    <Check size={16} className={`mt-0.5 shrink-0 ${p.popular ? "text-black" : "text-neon"}`} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="mt-7 space-y-3.5 text-sm">
+              {plan.features.map((f) => (
+                <li key={f} className="flex items-center gap-3">
+                  <div className="rounded-full bg-neon/10 p-1">
+                    <Check size={16} className="text-neon" />
+                  </div>
+                  <span className="text-white/90">{f}</span>
+                </li>
+              ))}
+            </ul>
 
-              <a
-                href="https://wa.me/918482996616"
-                target="_blank"
-                rel="noreferrer"
-                className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition-transform hover:scale-[1.02] ${
-                  p.popular ? "bg-black text-neon" : "bg-neon text-black"
-                }`}
-              >
-                Join Now
-                <span>→</span>
-              </a>
-            </motion.div>
-          ))}
+            <a
+              href="https://wa.me/918482996616"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-neon text-black px-5 py-3.5 font-bold transition-transform hover:scale-[1.02] glow-neon"
+            >
+              Join Now
+              <span>→</span>
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
